@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Tabs and Windows</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../video-pages/main.css"/>
+    <style>
+        h2{
+            cursor: pointer;
+        }
+        h2:hover{
+            color: #bada55;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>New Tabs and Windows</h1>
+        <h2>Click to open new Tab</h2>
+    </header>
+    <main>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium amet voluptas quasi rem nostrum natus quae non consequuntur explicabo odio, sit, quam laborum laboriosam doloribus. Neque reiciendis, nesciunt perferendis cumque.</p>
+        <p><a href="empty-form.html" target="Fred">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a> Quaerat, illo, incidunt. Doloremque assumenda nesciunt laudantium nisi debitis similique, aspernatur nobis quaerat natus eveniet consequatur blanditiis optio non! Quaerat deserunt, ex.</p>
+
+        <p>visible</p>
+        <p class="d-none">invisible</p>
+    </main>    
+    <script>
+        let h2 = document.querySelector('h2');
+        window.open
+        h2.addEventListener('click', (ev)=>{
+            //window.open(url, windowName, [windowFeatures]);
+            //https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Window_features
+            //let options = 'statusbar=no,height=300,width=600,xyz=abc';
+            let options = "";
+            //let ref = window.open('new.html', 'Fred', options); 
+            let ref = window.open('new.html', '_blank', options); 
+            
+            
+            let p = document.querySelector('main>p');
+            p.style.cursor = 'pointer';
+            p.addEventListener('click', (ev)=>{
+                ref.close();    
+            });
+        });
+    </script>
+</body>
+</html>
